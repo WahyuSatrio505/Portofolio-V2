@@ -51,9 +51,9 @@ body {
 /* muterr */
 .tulisan-atas {
   display: flex;
-  gap: 1rem; /* Jarak antar elemen */
+  gap: 3rem; /* Jarak antar elemen */
   align-items: center;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 .badge-future-builder {
@@ -64,7 +64,7 @@ body {
   font-size: 0.75rem;
   transition: all 0.9s ease;
   box-shadow: 0 0 10px #00c3ff80;
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: var(--font-text);
   font-weight: 400;
   font-style: normal;
   animation: startFlicker 5s ease-in-out infinite;
@@ -182,7 +182,7 @@ body {
   transition: all 0.4s ease-in-out;
   position: relative;
   overflow: hidden;
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: var(--font-main);
   font-weight: 400;
   font-style: normal;
   display: inline-block;
@@ -495,7 +495,6 @@ body {
   background: linear-gradient(90deg, #886796, #0ef6d3, #d58bf5);
   background-size: 200%;
   color: transparent;
-  background-clip: text;
   -webkit-background-clip: text;
   animation: gradientFlow 7s linear infinite;
   font-family: var(--font-main);
@@ -512,7 +511,6 @@ body {
 
 .about-description {
   font-size: 1.1rem;
-  font-weight: 300;
   color: #f7f7f7; /* Warna abu yang lebih soft */
   margin-bottom: 2rem;
   line-height: 1.8;
@@ -524,7 +522,7 @@ body {
   animation: fadeInDesc 5s ease forwards;
   opacity: 0;
   text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  font-family: "Gloria Hallelujah", cursive;
+  font-family: var(--font-subheading);
   font-weight: 200;
   font-style: normal;
 }

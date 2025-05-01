@@ -16,12 +16,36 @@
       Your browser does not support HTML5 video.
     </video>
 
-    <audio autoplay loop>
-      <source src="./assets/animation/Whyuu Gudboys.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
+    <audio id="bg-music" src="./assets/animation/Whyuu Gudboys.mp3" loop></audio>
+
+    <button id="music-btn" class="music-btn">
+      🔊
+    </button>
     
+    <!-- js -->
+    <script>
+      const music = document.getElementById("bg-music");
+      const btn = document.getElementById("music-btn");
     
+      btn.addEventListener("click", () => {
+        if (music.paused) {
+          music.play();
+          btn.innerText = "🔊";
+        } else {
+          music.pause();
+          btn.innerText = "🔇";
+        }
+      });
+    
+      // Optional: auto-start saat user klik sembarang tempat
+      document.body.addEventListener("click", () => {
+        if (music.paused) {
+          music.play();
+        }
+      }, { once: true }); // hanya sekali
+    </script>
+    
+    <!-- end js -->
 
     <a href="page2.html">FIX YOU</a>
   </body>
