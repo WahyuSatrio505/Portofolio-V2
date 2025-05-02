@@ -1781,7 +1781,7 @@ body {
 
 /* Project Item */
 .project-info {
-  background: linear-gradient(#e5ba7e, #9eecae);
+  background: linear-gradient(#ffde98, #ffffff);
   filter: contrast(90%);
   filter: drop-shadow(4rem);
 }
