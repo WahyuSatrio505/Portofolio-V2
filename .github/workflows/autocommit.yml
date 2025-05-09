@@ -1,0 +1,27 @@
+name: Auto Update README
+
+on:
+  schedule:
+    - cron: "0 7 * * *"  # Setiap hari jam 14.00 WIB (karena UTC+7)
+  workflow_dispatch: # Biar bisa dijalankan manual juga
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Update README
+        run: |
+          echo "Last updated: $(TZ='Asia/Jakarta' date)" > update-log.txt
+          cat update-log.txt >> README.md
+
+      - name: Commit changes
+        run: |
+          git config --global user.name 'GitHub Action Bot'
+          git config --global user.email 'bot@github.com'
+          git add README.md
+          git commit -m "🔁 Auto-update README on $(date +'%Y-%m-%d')"
+          git push
